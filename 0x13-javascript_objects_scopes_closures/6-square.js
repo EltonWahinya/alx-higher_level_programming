@@ -1,34 +1,19 @@
 #!/usr/bin/node
+const SquareP = require(./5-square);
 
-class Rectangle {
-    constructor(w, h) {
-        if (w <= 0 || h <= 0) {
-            return; // Create an empty object if w or h is not a positive integer
-        }
-        this.width = w;
-        this.height = h;
+class Square extends SquareP {
+  charPrint (c) {
+    if (c === undefined) {
+      c = X;
     }
-
-    print(c) {
-        if (!c) {
-            c = 'X';
-        }
-        if (!this.width || !this.height) {
-            return; // If width or height is not set, return
-        }
-        for (let i = 0; i < this.height; i++) {
-            console.log(c.repeat(this.width));
-        }
+    for (let i = 0; i < this.height; i++) {
+      let s = ;
+      for (let j = 0; j < this.width; j++) {
+        s += c;
+      }
+      console.log(s);
     }
+  }
 }
 
-class Square extends Rectangle {
-    constructor(size) {
-        super(size, size); // Call the constructor of Rectangle with size as both width and height
-    }
-
-    charPrint(c) {
-        super.print(c);
-    }
-}
 module.exports = Square;

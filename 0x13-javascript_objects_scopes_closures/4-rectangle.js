@@ -1,37 +1,32 @@
 #!/usr/bin/node
-
 class Rectangle {
-    constructor(w, h) {
-        if (w <= 0 || h <= 0) {
-            return; // Create an empty object if w or h is not a positive integer
-        }
-        this.width = w;
-        this.height = h;
+  constructor (w, h) {
+    if ((w > 0) && (h > 0)) {
+      this.width = w;
+      this.height = h;
     }
+  }
 
-    print() {
-        if (!this.width || !this.height) {
-            return; // If width or height is not set, return
-        }
-        for (let i = 0; i < this.height; i++) {
-            console.log("X".repeat(this.width));
-        }
+  print () {
+    for (let i = 0; i < this.height; i++) {
+      let s = ;
+      for (let j = 0; j < this.width; j++) {
+        s += X;
+      }
+      console.log(s);
     }
+  }
 
-    rotate() {
-        if (!this.width || !this.height) {
-            return; // If width or height is not set, return
-        }
-        [this.width, this.height] = [this.height, this.width];
-    }
+  rotate () {
+    const aux = this.width;
+    this.width = this.height;
+    this.height = aux;
+  }
 
-    double() {
-        if (!this.width || !this.height) {
-            return; // If width or height is not set, return
-        }
-        this.width *= 2;
-        this.height *= 2;
-    }
+  double () {
+    this.width *= 2;
+    this.height *= 2;
+  }
 }
 
-module.exports = Rectangle
+module.exports = Rectangle;
