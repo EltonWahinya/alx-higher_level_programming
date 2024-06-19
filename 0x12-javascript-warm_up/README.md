@@ -1,1 +1,1 @@
-Javascript is amaizing.
+0x12. JavaScript - Warm up
